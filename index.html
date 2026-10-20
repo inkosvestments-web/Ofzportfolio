@@ -2,6 +2,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Запрет браузерам делать из цифр синие телефонные ссылки -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
   <title>Портфель ОФЗ 17 млн ₽ — Расчёт денежного потока и реинвестиций</title>
   <style>
     * {
@@ -10,9 +16,15 @@
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+    /* Сброс синих ссылок, если браузер всё же попытается обернуть числа */
+    a, a:link, a:visited, a:hover, a:active {
+      color: inherit !important;
+      text-decoration: none !important;
+      cursor: text !important;
+    }
     body {
       background-color: #f4f5f7;
-      color: #111;
+      color: #111111;
       padding: 30px 15px;
     }
     .container {
@@ -26,17 +38,17 @@
       font-size: 30px;
       font-weight: 800;
       line-height: 1.2;
-      color: #000;
+      color: #000000;
       margin-bottom: 6px;
     }
     .subtitle {
       font-size: 14px;
-      color: #666;
+      color: #666666;
       margin-bottom: 20px;
     }
     .divider {
       height: 2px;
-      background-color: #000;
+      background-color: #000000;
       margin-bottom: 24px;
     }
     .badges {
@@ -54,13 +66,13 @@
       letter-spacing: 0.5px;
     }
     .badge-red {
-      background-color: #EF3124;
-      color: #fff;
+      background-color: #EF3124 !important;
+      color: #ffffff !important;
     }
     .badge-outline {
-      border: 1px solid #111;
-      color: #111;
-      background: #fff;
+      border: 1px solid #111111;
+      color: #111111 !important;
+      background: #ffffff;
     }
     .kpi-row {
       display: grid;
@@ -77,8 +89,8 @@
       border-right: none;
     }
     .kpi-label {
-     font-size: 12px;
-      color: #666;
+      font-size: 12px;
+      color: #666666;
       margin-bottom: 6px;
       font-weight: 600;
       text-transform: uppercase;
@@ -86,7 +98,7 @@
     .kpi-value {
       font-size: 28px;
       font-weight: 800;
-      color: #000;
+      color: #000000 !important;
       letter-spacing: -0.5px;
     }
     .kpi-value span {
@@ -107,12 +119,12 @@
       font-size: 13px;
     }
     th {
-      background-color: #111111;
-      color: #ffffff;
+      background-color: #111111 !important;
+      color: #ffffff !important;
       font-weight: 700;
       text-transform: uppercase;
       padding: 11px 12px;
-     text-align: right;
+      text-align: right;
       font-size: 11px;
       letter-spacing: 0.4px;
     }
@@ -122,7 +134,7 @@
     td {
       padding: 11px 12px;
       border-bottom: 1px solid #e8eaed;
-      color: #222;
+      color: #222222 !important;
       font-variant-numeric: tabular-nums;
       text-align: right;
     }
@@ -133,8 +145,8 @@
       font-weight: 700;
     }
     tfoot tr td {
-      background-color: #111111;
-      color: #ffffff;
+      background-color: #111111 !important;
+      color: #ffffff !important;
       font-weight: 800;
       border: none;
       padding: 12px;
@@ -164,7 +176,7 @@
       list-style: none;
       font-size: 12.5px;
       line-height: 1.6;
-      color: #333;
+      color: #333333;
     }
     .card-list li {
       margin-bottom: 8px;
@@ -177,10 +189,10 @@
       left: 0;
       font-size: 9px;
       top: 2px;
-      color: #EF3124;
+      color: #EF3124 !important;
     }
     .highlight-red {
-      color: #EF3124;
+      color: #EF3124 !important;
       font-weight: 700;
     }
     .capital-gain-box {
@@ -194,7 +206,7 @@
       font-size: 14px;
       font-weight: 800;
       text-transform: uppercase;
-      color: #000;
+      color: #000000;
       margin-bottom: 6px;
       display: flex;
       align-items: center;
@@ -203,7 +215,7 @@
     .capital-gain-text {
       font-size: 13px;
       line-height: 1.6;
-      color: #333;
+      color: #333333;
     }
   </style>
 </head>
@@ -215,23 +227,23 @@
   <div class="divider"></div>
  
   <div class="badges">
-    <div class="badge badge-red">Портфель 17 000 000 ₽</div>
-    <div class="badge badge-outline">5 равных долей по 20%</div>
-    <div class="badge badge-outline">Налоговые льготы ИИС</div>
+    <div class="badge badge-red" style="background-color: #EF3124 !important; color: #ffffff !important;">Портфель 17 000 000 ₽</div>
+    <div class="badge badge-outline" style="color: #111111 !important;">5 равных долей по 20%</div>
+    <div class="badge badge-outline" style="color: #111111 !important;">Налоговые льготы ИИС</div>
   </div>
  
   <div class="kpi-row">
     <div class="kpi-item">
       <div class="kpi-label">Вложено в ОФЗ</div>
-      <div class="kpi-value">16 998 446 <span>₽</span></div>
+      <div class="kpi-value" style="color: #000000 !important;">16 998 446 <span>₽</span></div>
     </div>
     <div class="kpi-item">
       <div class="kpi-label">Купонный доход за год</div>
-      <div class="kpi-value">2 567 259,24 <span>₽</span></div>
+      <div class="kpi-value" style="color: #000000 !important;">2 567 259,24 <span>₽</span></div>
     </div>
     <div class="kpi-item">
       <div class="kpi-label">Купонная доходность</div>
-      <div class="kpi-value highlight-red">15,10 <span>%</span></div>
+      <div class="kpi-value highlight-red" style="color: #EF3124 !important;">15,10 <span>%</span></div>
     </div>
   </div>
  
@@ -239,14 +251,14 @@
   <table>
     <thead>
       <tr>
-        <th>Облигация</th>
-        <th>Цена, %</th>
-        <th>Цена, ₽</th>
-        <th>Кол-во, шт.</th>
-        <th>Вложено, ₽</th>
-        <th>Купон (1 шт.)</th>
-        <th>Доход / год, ₽</th>
-        <th>Доходность</th>
+        <th style="color: #ffffff !important;">Облигация</th>
+        <th style="color: #ffffff !important;">Цена, %</th>
+        <th style="color: #ffffff !important;">Цена, ₽</th>
+        <th style="color: #ffffff !important;">Кол-во, шт.</th>
+        <th style="color: #ffffff !important;">Вложено, ₽</th>
+        <th style="color: #ffffff !important;">Купон (1 шт.)</th>
+        <th style="color: #ffffff !important;">Доход / год, ₽</th>
+        <th style="color: #ffffff !important;">Доходность</th>
       </tr>
     </thead>
     <tbody>
@@ -303,14 +315,14 @@
     </tbody>
     <tfoot>
       <tr>
-        <td>ИТОГО</td>
-        <td>—</td>
-        <td>—</td>
-        <td>21 023</td>
-        <td>16 998 445,96</td>
-        <td>—</td>
-        <td>2 567 259,24</td>
-        <td>15,10%</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">ИТОГО</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">—</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">—</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">21 023</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">16 998 445,96</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">—</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">2 567 259,24</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">15,10%</td>
       </tr>
     </tfoot>
   </table>
@@ -319,11 +331,11 @@
   <table>
     <thead>
       <tr>
-        <th>Месяцы выплат</th>
-        <th>Выпуски ОФЗ в выплате</th>
-        <th>1-е полугодие, ₽</th>
-       <th>2-е полугодие, ₽</th>
-        <th>Годовой поток, ₽</th>
+        <th style="color: #ffffff !important;">Месяцы выплат</th>
+        <th style="color: #ffffff !important;">Выпуски ОФЗ в выплате</th>
+        <th style="color: #ffffff !important;">1-е полугодие, ₽</th>
+        <th style="color: #ffffff !important;">2-е полугодие, ₽</th>
+        <th style="color: #ffffff !important;">Годовой поток, ₽</th>
       </tr>
     </thead>
     <tbody>
@@ -358,11 +370,11 @@
     </tbody>
     <tfoot>
       <tr>
-        <td>ИТОГО ЗА ГОД</td>
-        <td>5 выпусков</td>
-        <td>1 283 629,62</td>
-        <td>1 283 629,62</td>
-        <td>2 567 259,24</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">ИТОГО ЗА ГОД</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">5 выпусков</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">1 283 629,62</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">1 283 629,62</td>
+        <td style="color: #ffffff !important; background-color: #111111 !important;">2 567 259,24</td>
       </tr>
     </tfoot>
   </table>
@@ -371,25 +383,25 @@
   <table>
     <thead>
       <tr>
-        <th>Сценарий реинвестирования на счёте</th>
-        <th>Купоны за 5 лет, ₽</th>
-        <th>Доход от сложного процента, ₽</th>
-        <th>Итоговый капитал, ₽</th>
-        <th>Эффективная доходность</th>
+        <th style="color: #ffffff !important;">Сценарий реинвестирования на счёте</th>
+        <th style="color: #ffffff !important;">Купоны за 5 лет, ₽</th>
+        <th style="color: #ffffff !important;">Доход от сложного процента, ₽</th>
+        <th style="color: #ffffff !important;">Итоговый капитал, ₽</th>
+        <th style="color: #ffffff !important;">Эффективная доходность</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="bold">Реинвестирование по ставке 10% годовых</td>
         <td>12 836 296</td>
-        <td class="bold highlight-red">+2 837 078</td>
+        <td class="bold highlight-red" style="color: #EF3124 !important;">+2 837 078</td>
         <td class="bold">32 673 374</td>
         <td class="bold">18,44% (+3,34% годовых)</td>
       </tr>
       <tr>
         <td class="bold">Реинвестирование по ставке 11% годовых</td>
         <td>12 836 296</td>
-        <td class="bold highlight-red">+3 152 100</td>
+        <td class="bold highlight-red" style="color: #EF3124 !important;">+3 152 100</td>
         <td class="bold">32 988 396</td>
         <td class="bold">18,81% (+3,71% годовых)</td>
       </tr>
@@ -400,7 +412,7 @@
     <div class="card">
       <div class="card-header">
         <span>Коммерческая недвижимость</span>
-        <span style="color: #777;">11,0% до налогов</span>
+        <span style="color: #777777;">11,0% до налогов</span>
       </div>
       <ul class="card-list">
         <li>Чистая арендная доходность: <strong>9,3% – 10,2%</strong> (НДФЛ 15% или УСН 6% + 1%).</li>
@@ -412,7 +424,7 @@
     <div class="card">
       <div class="card-header">
         <span>Портфель ОФЗ на ИИС</span>
-        <span class="highlight-red">до 18,8% чистыми</span>
+        <span class="highlight-red" style="color: #EF3124 !important;">до 18,8% чистыми</span>
       </div>
       <ul class="card-list">
         <li>Гарантированный купонный поток: <strong>15,10% годовых</strong> (213 938 ₽/мес.).</li>
@@ -426,7 +438,7 @@
   <div class="capital-gain-box">
     <div class="capital-gain-title">
       <span>Потенциал роста тела капитала при снижении ключевой ставки до 10%</span>
-    </div>
+   </div>
     <div class="capital-gain-text">
       На горизонте 3–5 лет при возврате ключевой ставки Банка России к нейтральному уровню <strong>10%</strong> рыночные цены долгосрочных выпусков с фиксированным купоном вернутся к номиналу (1 000 ₽) и выше.
       Поскольку портфель формируется со средним дисконтом <strong>~19% к номиналу</strong> (цены покупки 79,5% – 83,3%), нормализация кривой доходностей обеспечит
